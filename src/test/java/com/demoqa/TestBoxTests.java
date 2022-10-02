@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -45,5 +47,17 @@ public class TestBoxTests {
         $(byText("Haryana")).click();
         $("#city").click();
         $(byText("Panipat")).click();
+        $("#submit").click();
+
+        $(".modal-body").shouldHave(text("Kuat Amirkhanov"),
+                text("amirkhanovkuat@gmail.com"),
+                text("Male"),
+                text("7051174428"),
+                text("08 December,1999"),
+                text("Maths"),
+                text("Music"),
+                text("test.jpeg"),
+                text("Some address"),
+                text("Haryana Panipat"));
     }
 }
