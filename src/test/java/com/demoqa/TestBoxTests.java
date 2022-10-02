@@ -27,7 +27,7 @@ public class TestBoxTests {
         $("#firstName").setValue("Kuat");
         $("#lastName").setValue("Amirkhanov");
         $("#userEmail").setValue("amirkhanovkuat@gmail.com");
-        $("[for=gender-radio-1]").click();
+        $(byText("Male")).click();
         $("#userNumber").setValue("7051174428");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").click();
