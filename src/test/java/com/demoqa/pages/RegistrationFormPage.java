@@ -24,10 +24,10 @@ public class RegistrationFormPage {
 
     public RegistrationFormPage openPage() {
         open("/automation-practice-form");
+        zoom(0.8);
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
         Configuration.holdBrowserOpen = true;
-
         return this;
     }
 
@@ -49,8 +49,8 @@ public class RegistrationFormPage {
         return this;
     }
 
-    public RegistrationFormPage setGender(String value){
-        $(byText("Male")).click();
+    public RegistrationFormPage setGender(String gender){
+        $(byText(gender)).click();
 
         return this;
     }

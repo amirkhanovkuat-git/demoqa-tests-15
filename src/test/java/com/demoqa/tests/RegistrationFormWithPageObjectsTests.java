@@ -5,7 +5,9 @@ import com.demoqa.pages.RegistrationFormPage;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class RegistrationFormWithPageObjectsTests {
+import java.util.Locale;
+
+public class RegistrationFormWithPageObjectsTests extends TestData {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @BeforeAll
@@ -19,30 +21,30 @@ public class RegistrationFormWithPageObjectsTests {
     @Test
     void fillFormTest() {
         registrationFormPage.openPage()
-                .setFirstName("Kuat")
-                .setLastName("Amirkhanov")
-                .setEmail("amirkhanovkuat@gmail.com")
-                .setGender("Male")
-                .setNumber("7054992748")
-                .setBirthDate("08", "December", "1999")
-                .setSubjects("Mat")
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setEmail(email)
+                .setGender(gender)
+                .setNumber(phone)
+                .setBirthDate(day, month, year)
+                .setSubjects(subject)
                 .chooseHobbies()
                 .uploadPicture()
-                .setAddress("Some address")
+                .setAddress(address)
                 .chooseStateCity()
                 .submitForm();
 
         registrationFormPage.checkResultsTableVisible()
-                .checkResult("Student Name", "Kuat Amirkhanov")
-                .checkResult("Student Email", "amirkhanovkuat@gmail.com")
-                .checkResult("Gender", "Male")
-                .checkResult("Mobile", "7054992748")
-                .checkResult("Date of Birth", "08 December,1999")
-                .checkResult("Subjects", "Maths")
-                .checkResult("Hobbies", "Music")
-                .checkResult("Picture", "test.jpeg")
-                .checkResult("Address", "Some address")
-                .checkResult("State and City", "Haryana Panipat");
+                .checkResult("Student Name", firstName + " " + lastName)
+                .checkResult("Student Email", email)
+                .checkResult("Gender", gender)
+                .checkResult("Mobile", phone)
+                .checkResult("Date of Birth", day + " " + month + "," + year)
+                .checkResult("Subjects", subjectCheck)
+                .checkResult("Hobbies", hobbies)
+                .checkResult("Picture", picture)
+                .checkResult("Address", address)
+                .checkResult("State and City", stateCity);
 
     }
 }
