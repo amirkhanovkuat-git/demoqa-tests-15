@@ -5,7 +5,7 @@ import com.github.javafaker.Faker;
 
 import java.util.Locale;
 
-import static com.demoqa.utils.generateMonth.randomMonth;
+import static com.demoqa.utils.GenerateMonth.randomMonth;
 
 public class TestData {
     Faker faker = new Faker(new Locale("en"));

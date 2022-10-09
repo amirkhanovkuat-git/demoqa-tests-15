@@ -5,8 +5,6 @@ import com.demoqa.pages.RegistrationFormPage;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.Locale;
-
 public class RegistrationFormWithPageObjectsTests extends TestData {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
